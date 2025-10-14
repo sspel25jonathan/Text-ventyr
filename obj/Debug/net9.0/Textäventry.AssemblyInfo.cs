@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Textäventry")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff3202ed73215cc61fd357d22ff71d07eb4137ba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3f4491f9d6d6a431f9374e367b97bfeb8890160")]
 [assembly: System.Reflection.AssemblyProductAttribute("Textäventry")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Textäventry")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

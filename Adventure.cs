@@ -18,6 +18,7 @@ namespace TextAdventure
             int RandomFoe = rng.Next(2);
             int RandomDamage = rng.Next(1, 3);
             string FoeFacing = foeNameGrenrator[RandomFoe];
+            bool BearRanAway = false;
             if (FoeFacing == "Bear")
             {
                 FoeHp = 6;
@@ -34,13 +35,14 @@ namespace TextAdventure
             {
                 Console.WriteLine("What will you do?");
                 Console.WriteLine("[1]Attack [2]Items");
-
+                
                 int choice = Convert.ToInt32(Console.ReadLine());
                 int tempi = 0;
                 while (tempi < 1)
                 {
                     if (choice == 1)
                     {
+                        RandomDamage = rng.Next(1, 3);
                         FoeHp = FoeHp - RandomDamage;
                         tempi = 1;
                         Console.WriteLine("FoeHp is now " + FoeHp);
@@ -59,7 +61,9 @@ namespace TextAdventure
                             tempi = 1;
                             if (FoeFacing == "Bear")
                             {
-                                Console.WriteLine("The Bear ran away you win!");
+                                Console.WriteLine("The Bear ran away!");
+                                BearRanAway = true;
+                                break;
                             }
                             else
                             {
@@ -79,23 +83,33 @@ namespace TextAdventure
                         }
                     }
                 }
+
+
+
+                if (FoeHp <= 0 || BearRanAway == true)
+                {
+                    Console.WriteLine("You won");
+                    break;
+                }
                 while (FoeHp > 0)
                 {
                     Console.WriteLine("You got attacked");
+                    RandomDamage = rng.Next(1, 3);
                     hp = hp - RandomDamage;
                     Console.WriteLine("your hp is now " + hp);
                     break;
                 }
-                if (FoeHp <= 0)
-                {
-                    Console.WriteLine("You won");
-                    break;
-            }
-            if (hp <= 0)
+                if (hp <= 0)
                 {
                     Console.WriteLine(" you lost");
                     break;
-            }
+                }
+                else if (hp <= 0 && FoeHp <= 0)
+                {
+                    Console.WriteLine("both you and " + FoeFacing + " died, You won?");
+                }
+                
+                
                 
             }
             
