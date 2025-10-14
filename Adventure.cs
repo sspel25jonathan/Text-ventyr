@@ -19,6 +19,7 @@ namespace TextAdventure
             int RandomDamage = rng.Next(1, 3);
             string FoeFacing = foeNameGrenrator[RandomFoe];
             bool BearRanAway = false;
+            bool HpDrink = false;
             if (FoeFacing == "Bear")
             {
                 FoeHp = 6;
@@ -70,12 +71,18 @@ namespace TextAdventure
                                 Console.WriteLine("It did nothing");
                             }
                         }
-                        else if (Tempchoice == 2)
+                        else if (Tempchoice == 2 && HpDrink == false)
                         {
                             tempi = 1;
                             Console.WriteLine("You gain 2 hp");
                             hp = hp + 2;
+                        } else if (Tempchoice == 2 && HpDrink == true)
+                        {
+                            tempi = 1;
+                            Console.WriteLine("You tried to drink a empty bottle");
                         }
+                
+            
                         else
                         {
                             tempi = 1;
